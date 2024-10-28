@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/tabular/static/css/main.3fb2468e.css",
+    "main.js": "/tabular/static/js/main.cf0c92d6.js",
+    "static/js/239.fb7504ee.chunk.js": "/tabular/static/js/239.fb7504ee.chunk.js",
+    "static/js/213.9ed33e4f.chunk.js": "/tabular/static/js/213.9ed33e4f.chunk.js",
+    "static/js/732.73e6e9ab.chunk.js": "/tabular/static/js/732.73e6e9ab.chunk.js",
+    "static/js/453.b0c614a0.chunk.js": "/tabular/static/js/453.b0c614a0.chunk.js",
+    "static/media/logo.svg": "/tabular/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/tabular/index.html",
+    "main.3fb2468e.css.map": "/tabular/static/css/main.3fb2468e.css.map",
+    "main.cf0c92d6.js.map": "/tabular/static/js/main.cf0c92d6.js.map",
+    "239.fb7504ee.chunk.js.map": "/tabular/static/js/239.fb7504ee.chunk.js.map",
+    "213.9ed33e4f.chunk.js.map": "/tabular/static/js/213.9ed33e4f.chunk.js.map",
+    "732.73e6e9ab.chunk.js.map": "/tabular/static/js/732.73e6e9ab.chunk.js.map",
+    "453.b0c614a0.chunk.js.map": "/tabular/static/js/453.b0c614a0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3fb2468e.css",
+    "static/js/main.cf0c92d6.js"
+  ]
+}
