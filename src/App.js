@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Calculator from "./components/calculator";
-import DollarPrice from "./price";
+import DollarPrice from "./components/price";
 
 function App() {
   return (
