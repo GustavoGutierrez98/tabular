@@ -10,7 +10,7 @@ const DollarPrice = () => {
       try {
         // Replace with your chosen API's endpoint and your API key
         const response = await axios.get(
-          "https://api.exchangerate-api.com/v4/latest/USD"
+          "https://v6.exchangerate-api.com/v6/25a631142a9231ab8140c8cb/latest/USD"
         );
         setExchangeRate(response.data.rates.MXN); // Access MXN rate
         setLoading(false);
