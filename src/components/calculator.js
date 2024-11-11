@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "./calculator.css";
 import jsPDF from "jspdf"; // Importa jsPDF
 
@@ -14,32 +14,31 @@ function Calculator() {
 
   const calculateResult = () => {
     try {
-      const result = eval(display).toString();
-      setDisplay(result);
+      // Using a safer approach to evaluate the mathematical expression
+      const result = Function('"use strict";return (' + display + ")")();
+      setDisplay(result.toString());
       setHistory([...history, `${display} = ${result}`]);
     } catch {
       setDisplay("Error");
     }
   };
 
-  // Función para evaluar expresiones matemáticas de forma segura
-  const safeEval = (expression) => {
-    return Function(`'use strict'; return (${expression})`)();
-  };
-
-  // Manejador de teclas
-  const handleKeyPress = (event) => {
-    const key = event.key;
-    if (!isNaN(key) || ["+", "-", "*", "/"].includes(key)) {
-      handleButtonClick(key);
-    } else if (key === "Enter") {
-      calculateResult();
-    } else if (key === "Backspace") {
-      setDisplay(display.slice(0, -1));
-    } else if (key === "Escape") {
-      clearDisplay();
-    }
-  };
+  // Use useCallback to memoize handleKeyPress and avoid unnecessary rerenders
+  const handleKeyPress = useCallback(
+    (event) => {
+      const key = event.key;
+      if (!isNaN(key) || ["+", "-", "*", "/"].includes(key)) {
+        handleButtonClick(key);
+      } else if (key === "Enter") {
+        calculateResult();
+      } else if (key === "Backspace") {
+        setDisplay(display.slice(0, -1));
+      } else if (key === "Escape") {
+        clearDisplay();
+      }
+    },
+    [display, calculateResult]
+  );
 
   // Escucha eventos de teclado
   useEffect(() => {
