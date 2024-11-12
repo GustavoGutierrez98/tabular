@@ -1,16 +1,24 @@
-/* src/components/Calculator.css */
+/* Contenedor principal que organiza la calculadora y el sidebar */
+.calculator-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Espacio entre la calculadora y el sidebar */
+  max-width: 1000px;
+  margin: 0 auto;
+}
 
+/* Estilos de la calculadora */
 .calculator {
-  width: 300px;
+  width: 400px;
   background-color: #333;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-  margin: 0 auto;
 }
 
+/* Estilos para la pantalla de la calculadora (display) */
 .calculator-display {
-  height: 50px;
+  height: 70px;
   background-color: #222;
   color: #fff;
   font-size: 2em;
@@ -21,6 +29,7 @@
   overflow: hidden;
 }
 
+/* Estilos para los botones de la calculadora */
 .calculator-buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -37,8 +46,8 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.2s;
-  width: 60px; /* Ajusta el ancho de los botones normales */
-  height: 60px; /* Ajusta la altura de los botones normales */
+  width: 90px; /* Ajusta el ancho de los botones normales */
+  height: 90px; /* Ajusta la altura de los botones normales */
 }
 
 .button:hover {
@@ -57,23 +66,17 @@
   background-color: #f05c00;
 }
 
-/* Estilos para el botón de imprimir */
-.button-print {
-  grid-column: span 4; /* Ocupa todas las columnas */
-  background-color: #f05c00; /* Color de fondo diferente */
-  font-size: 1.5em; /* Tamaño de fuente igual al resto */
-  height: 70px; /* Ajusta la altura para hacerlo más grande */
-  width: 130px;
-  margin: 0 auto; /* Centra el botón horizontalmente */  
-}
-
-.button-export{
-  grid-column: span 4; /* Ocupa todas las columnas */
-  background-color: #444; /* Color de fondo diferente */
-  font-size: 1.5em; /* Tamaño de fuente igual al resto */
-  height: 70px; /* Ajusta la altura para hacerlo más grande */
-  width: 130px;
-  margin: 0 auto; /* Centra el botón horizontalmente */  
+/* Estilos para el área del historial y los botones */
+.calculator-sidebar {
+  width: 300px; /* Tamaño fijo para el sidebar */
+  background-color: #333;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Espacio entre el historial y los botones */
 }
 
 /* Estilos para el historial */
@@ -82,9 +85,10 @@
   color: #fff;
   border-radius: 5px;
   padding: 10px;
-  max-height: 150px;
+  max-height: 200px;
   overflow-y: auto;
   font-size: 0.9em;
+  width: 100%; /* Asegura que el historial ocupe todo el ancho disponible */
 }
 
 .calculator-history h3 {
@@ -98,4 +102,41 @@
 
 .calculator-history li {
   margin-bottom: 5px;
+}
+
+/* Botones de Imprimir y Exportar */
+.button-print,
+.button-export {
+  width: 160px;
+  height: 70px;
+  font-size: 2em;
+  border-radius: 5px;
+  background-color: #f05c00; /* Color de fondo para el botón de imprimir */
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.button-print:hover,
+.button-export:hover {
+  background-color: #f05c00;
+}
+
+/* Estilo del botón de previsualización */
+.button-preview {
+  width: 210px;
+  height: 70px;
+  font-size: 2em;
+  border-radius: 5px;
+  background-color: #008CBA; /* Color azul */
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 20px;
+}
+
+.button-preview:hover {
+  background-color: #007B9E; /* Color azul más oscuro */
 }
